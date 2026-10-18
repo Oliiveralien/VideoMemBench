@@ -79,7 +79,7 @@ baseline has no fixed frame budget. Scores are percentages.
 <tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-4B</td><td align="center">128</td><td align="right">32.4</td><td align="right">29.4</td><td align="right">12.9</td><td align="right">24.9</td></tr>
 <tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen2.5-VL-32B</td><td align="center">128</td><td align="right">31.7</td><td align="right">32.6</td><td align="right">9.6</td><td align="right">24.6</td></tr>
 <tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen2.5-VL-7B</td><td align="center">128</td><td align="right">26.2</td><td align="right">24.9</td><td align="right">8.4</td><td align="right">19.8</td></tr>
-<tr><td>Keye-VL-1.5-8B</td><td align="center">128</td><td align="right">25.4</td><td align="right">24.5</td><td align="right">8.2</td><td align="right">19.4</td></tr>
+<tr><td><img src="assets/icons/keye.png" height="20" alt="" />&nbsp; Keye-VL-1.5-8B</td><td align="center">128</td><td align="right">25.4</td><td align="right">24.5</td><td align="right">8.2</td><td align="right">19.4</td></tr>
 <tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen2.5-VL-3B</td><td align="center">128</td><td align="right">23.5</td><td align="right">24.4</td><td align="right">5.7</td><td align="right">17.9</td></tr>
 <tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-0.8B</td><td align="center">128</td><td align="right">21.6</td><td align="right">21.3</td><td align="right">5.7</td><td align="right">16.2</td></tr>
 </tbody>
