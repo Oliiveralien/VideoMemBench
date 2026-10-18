@@ -1,0 +1,24 @@
+VideoMemBench — Academic Research Use Notice
+
+Copyright (c) VideoMemBench contributors. All rights reserved except as stated below.
+
+Permission is granted to access, run, and locally adapt this evaluation code for
+academic, non-commercial research, with attribution to VideoMemBench and retention
+of this notice. Commercial use requires prior written permission from the rights
+holders. Redistribution, republication, or dissemination of the benchmark or its
+materials, including modified versions, requires prior written approval.
+
+Copyright in source videos belongs to the respective video owners. The content of
+those videos does not represent the views or positions of the researchers. This
+repository does not distribute dataset videos or private annotations and grants no
+rights to third-party material. Any future dataset release is subject to its own
+terms and the rights of the underlying content owners.
+
+If you believe a released item infringes your rights, contact the authors or open
+a repository issue identifying the material. Substantiated requests will be
+addressed, including removal where appropriate.
+
+The materials are provided "as is", without warranty of any kind, express or
+implied. To the extent permitted by law, the contributors are not liable for
+claims or damages arising from use of the materials.
+

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VideoMemBench evaluation record (one JSONL line)",
+  "description": "The Python validator additionally checks references, temporal order, uniqueness, and gold/option consistency.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "video_id",
+    "video_name",
+    "dialogue"
+  ],
+  "properties": {
+    "video_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "video_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dialogue": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "turn_id",
+          "type",
+          "question"
+        ],
+        "properties": {
+          "turn_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "enum": [
+              "multi_choice_question",
+              "open_structured",
+              "true_or_false_question"
+            ]
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          },
+          "options": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "propertyNames": {
+              "pattern": "^[A-H]$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "answer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reference_answer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "acceptable_answers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "evidence": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Optional source metadata; ignored by inference"
+          },
+          "dependency": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "depends_on",
+                  "dep_type"
+                ],
+                "properties": {
+                  "depends_on": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "dep_type": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "enum": [
+                        "answer",
+                        "episodic",
+                        "referent"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

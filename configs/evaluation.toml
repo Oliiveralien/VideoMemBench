@@ -1,0 +1,18 @@
+# Paths resolve relative to the working directory. No keys belong in this file.
+[evaluation]
+annotations = "data/annotations.jsonl"
+frame_cache = "cache/f128"
+output = "runs/my-model/eval.jsonl"
+model = "YOUR_SERVED_MODEL_ID"
+base_url = "http://localhost:8000/v1"
+# Paper judge: GPT-5.4 mini. Set the exact ID served by your provider.
+judge_model = "YOUR_GPT_5_4_MINI_ENDPOINT_ID"
+judge_base_url = "http://localhost:8001/v1"
+api_key_env = "VMB_API_KEY"
+judge_api_key_env = "VMB_JUDGE_API_KEY"
+frames = 128
+resolution = 512
+max_tokens = 2048
+workers = 1
+timeout = 600.0
+extra_body = {}

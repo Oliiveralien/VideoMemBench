@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "Please cite the VideoMemBench manuscript when using this evaluation."
+title: "VideoMemBench: How Well Do MLLMs Remember in Video Conversations?"
+type: software
+version: 0.1.0
+authors:
+  - family-names: Hu
+    given-names: Zhengdong
+  - family-names: Wang
+    given-names: Chao
+  - family-names: Feng
+    given-names: Kaituo
+  - family-names: Yao
+    given-names: Huanjin
+  - family-names: Lu
+    given-names: Mingfei
+  - family-names: Fan
+    given-names: Hehe
+  - family-names: Yang
+    given-names: Yi
+preferred-citation:
+  type: unpublished
+  title: "VideoMemBench: How Well Do MLLMs Remember in Video Conversations?"
+  authors:
+    - family-names: Hu
+      given-names: Zhengdong
+    - family-names: Wang
+      given-names: Chao
+    - family-names: Feng
+      given-names: Kaituo
+    - family-names: Yao
+      given-names: Huanjin
+    - family-names: Lu
+      given-names: Mingfei
+    - family-names: Fan
+      given-names: Hehe
+    - family-names: Yang
+      given-names: Yi

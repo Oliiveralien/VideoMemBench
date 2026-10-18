@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "videomembench-eval"
+version = "0.1.0"
+description = "Evaluation tools for in-context video memory in multi-turn conversations"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+dependencies = ["openai>=1.40,<3", "opencv-python-headless>=4.8,<5", "pillow>=10,<13"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+vmb-validate = "videomembench.data:main"
+vmb-prepare = "videomembench.video:main"
+vmb-evaluate = "inference.evaluate:main"
+vmb-score = "inference.metrics:main"
+
+[tool.setuptools.packages.find]
+include = ["videomembench*", "inference*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
