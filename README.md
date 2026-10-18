@@ -1,4 +1,6 @@
 <div align="center">
+  <img src="assets/hero.svg" width="100%" alt="VideoMemBench — what a model has seen, what a model has said" />
+
   <img src="assets/masthead.svg" width="100%" alt="VideoMemBench: How Well Do MLLMs Remember in Video Conversations? — Zhengdong Hu, Chao Wang, Kaituo Feng, Huanjin Yao, Mingfei Lu, Hehe Fan, Yi Yang" />
 
 
