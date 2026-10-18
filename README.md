@@ -12,10 +12,10 @@ The Hong Kong University of Science and Technology · Zhejiang University<br/>
 
 <br/><br/>
 
-![Evaluation only](https://img.shields.io/badge/release-evaluation_only-725AF2?style=flat-square)
-![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-3776AB?style=flat-square&logo=python&logoColor=white)
-![128 frames](https://img.shields.io/badge/protocol-128_frames-14B8A6?style=flat-square)
-![Self rollout](https://img.shields.io/badge/history-self_rollout-F59E0B?style=flat-square)
+![Evaluation only](https://img.shields.io/badge/release-evaluation_only-725AF2?style=for-the-badge)
+![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![128 frames](https://img.shields.io/badge/protocol-128_frames-14B8A6?style=for-the-badge)
+![Self rollout](https://img.shields.io/badge/history-self_rollout-F59E0B?style=for-the-badge)
 
 [Overview](#overview) · [Evaluation](#evaluation) · [Protocol](docs/PROTOCOL.md) · [Data Format](docs/DATA_FORMAT.md) · [Results](#results) · [Citation](#citation)
 
@@ -30,15 +30,68 @@ Later questions depend on earlier turns through two types of links: **Episodic
 Dependencies**, which revisit a previously discussed scene or entity, and **Answer
 Dependencies**, which build on an earlier answer.
 
-<table>
-<tr><th>Videos</th><th>Dialogue Turns</th><th>Dependent Turns</th><th>Video Duration</th></tr>
-<tr><td align="center">326</td><td align="center">2,476</td><td align="center">1,387</td><td align="center">≈154 hours</td></tr>
-</table>
+<p align="center">
+  <img src="assets/statistics.svg" width="100%" alt="326 videos, 2476 turns, 1387 dependent turns, 128 fixed frames" />
+</p>
 
 Each model receives the same **128 timestamped frames**. Questions are presented
 in dialogue order, with the model's own previous responses retained in the history.
 
+## Results
+
+Main results from Table 2. Models use 128 frames and self-rollout. The human
+baseline has no fixed frame budget. Scores are percentages.
+
+<p align="center">
+  <img src="assets/leaderboard.svg" width="100%" alt="Main evaluation results: human baseline, closed-source models, and leading open-weight models" />
+</p>
+
+<details>
+<summary><b>Full results — 25 models</b></summary>
+<br/>
+
+<table>
+<thead><tr><th align="left">Model</th><th align="center">Frames</th><th align="right">TurnAcc</th><th align="right">EpiDepAcc</th><th align="right">AnsDepAcc</th><th align="right">Overall ↑</th></tr></thead>
+<tbody>
+<tr><th colspan="6" align="left">Human baseline</th></tr>
+<tr><td><img src="assets/icons/human.svg" width="20" height="20" alt="" />&nbsp; Human</td><td align="center">—</td><td align="right"><b>88.1</b></td><td align="right"><b>86.0</b></td><td align="right"><b>84.2</b></td><td align="right"><b>86.1</b></td></tr>
+<tr><th colspan="6" align="left">Closed-source models</th></tr>
+<tr><td><img src="assets/icons/claude-color.svg" width="20" height="20" alt="" />&nbsp; Claude Opus 5</td><td align="center">128</td><td align="right"><b>52.3</b></td><td align="right"><b>49.1</b></td><td align="right"><b>35.7</b></td><td align="right"><b>45.7</b></td></tr>
+<tr><td><img src="assets/icons/gemini-color.svg" width="20" height="20" alt="" />&nbsp; Gemini 3.8 Flash</td><td align="center">128</td><td align="right">50.4</td><td align="right">46.6</td><td align="right">30.3</td><td align="right">42.4</td></tr>
+<tr><td><img src="assets/icons/openai.svg" width="20" height="20" alt="" />&nbsp; GPT-5.6-sol</td><td align="center">128</td><td align="right">50.0</td><td align="right">47.8</td><td align="right">27.1</td><td align="right">41.7</td></tr>
+<tr><td><img src="assets/icons/gemini-color.svg" width="20" height="20" alt="" />&nbsp; Gemini 3.5 Flash</td><td align="center">128</td><td align="right">49.6</td><td align="right">45.5</td><td align="right">29.7</td><td align="right">41.6</td></tr>
+<tr><td><img src="assets/icons/openai.svg" width="20" height="20" alt="" />&nbsp; GPT-5.5</td><td align="center">128</td><td align="right">48.0</td><td align="right">46.5</td><td align="right">27.0</td><td align="right">40.5</td></tr>
+<tr><td><img src="assets/icons/claude-color.svg" width="20" height="20" alt="" />&nbsp; Claude Sonnet 5</td><td align="center">128</td><td align="right">47.8</td><td align="right">45.3</td><td align="right">27.3</td><td align="right">40.2</td></tr>
+<tr><td><img src="assets/icons/gemini-color.svg" width="20" height="20" alt="" />&nbsp; Gemini 3.1 Pro Preview</td><td align="center">128</td><td align="right">45.7</td><td align="right">44.8</td><td align="right">27.0</td><td align="right">39.1</td></tr>
+<tr><td><img src="assets/icons/openai.svg" width="20" height="20" alt="" />&nbsp; GPT-5.4</td><td align="center">128</td><td align="right">44.4</td><td align="right">42.6</td><td align="right">21.9</td><td align="right">36.3</td></tr>
+<tr><th colspan="6" align="left">Open-weight models</th></tr>
+<tr><td><img src="assets/icons/kimi-color.svg" width="20" height="20" alt="" />&nbsp; Kimi K3</td><td align="center">128</td><td align="right"><b>50.5</b></td><td align="right"><b>49.0</b></td><td align="right"><b>27.1</b></td><td align="right"><b>42.2</b></td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-235B-A22B</td><td align="center">128</td><td align="right">43.1</td><td align="right">41.6</td><td align="right">18.6</td><td align="right">34.4</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-27B</td><td align="center">128</td><td align="right">42.2</td><td align="right">39.8</td><td align="right">20.9</td><td align="right">34.3</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-397B-A17B</td><td align="center">128</td><td align="right">42.3</td><td align="right">40.1</td><td align="right">20.3</td><td align="right">34.2</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-122B-A10B</td><td align="center">128</td><td align="right">42.4</td><td align="right">39.5</td><td align="right">19.9</td><td align="right">33.9</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-35B-A3B</td><td align="center">128</td><td align="right">38.2</td><td align="right">36.3</td><td align="right">18.0</td><td align="right">30.8</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-32B</td><td align="center">128</td><td align="right">39.3</td><td align="right">35.9</td><td align="right">17.2</td><td align="right">30.8</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-30B-A3B</td><td align="center">128</td><td align="right">36.4</td><td align="right">35.1</td><td align="right">15.8</td><td align="right">29.1</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-9B</td><td align="center">128</td><td align="right">34.6</td><td align="right">33.4</td><td align="right">12.9</td><td align="right">27.0</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-8B</td><td align="center">128</td><td align="right">34.8</td><td align="right">32.1</td><td align="right">12.3</td><td align="right">26.4</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-4B</td><td align="center">128</td><td align="right">33.8</td><td align="right">32.6</td><td align="right">12.5</td><td align="right">26.3</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-4B</td><td align="center">128</td><td align="right">32.4</td><td align="right">29.4</td><td align="right">12.9</td><td align="right">24.9</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen2.5-VL-32B</td><td align="center">128</td><td align="right">31.7</td><td align="right">32.6</td><td align="right">9.6</td><td align="right">24.6</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen2.5-VL-7B</td><td align="center">128</td><td align="right">26.2</td><td align="right">24.9</td><td align="right">8.4</td><td align="right">19.8</td></tr>
+<tr><td>Keye-VL-1.5-8B</td><td align="center">128</td><td align="right">25.4</td><td align="right">24.5</td><td align="right">8.2</td><td align="right">19.4</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen2.5-VL-3B</td><td align="center">128</td><td align="right">23.5</td><td align="right">24.4</td><td align="right">5.7</td><td align="right">17.9</td></tr>
+<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-0.8B</td><td align="center">128</td><td align="right">21.6</td><td align="right">21.3</td><td align="right">5.7</td><td align="right">16.2</td></tr>
+</tbody>
+</table>
+
+</details>
+
 ## Evaluation
+
+<p align="center">
+  <img src="assets/evaluation-flow.svg" width="100%" alt="Fixed frames, self-rollout, grading, and metrics" />
+</p>
 
 ### Installation
 
@@ -112,12 +165,15 @@ as incorrect.
 
 ## Metrics
 
-| Metric | Evaluation subset | Scoring |
-|---|---|---|
-| **TurnAcc** | All turns | Per-turn correctness |
-| **EpiDepAcc** | Turns with at least one Episodic parent | Per-turn correctness, independent of parent correctness |
-| **AnsDepAcc** | Turns with at least one Answer parent | Correctness of the turn and all recursive Answer ancestors |
-| **Overall** | Three metrics | (TurnAcc + EpiDepAcc + AnsDepAcc) / 3 |
+<table>
+<thead><tr><th align="left">Metric</th><th align="left">Evaluation subset</th><th align="left">Credit rule</th></tr></thead>
+<tbody>
+<tr><td><b>① TurnAcc</b></td><td>All turns</td><td>Correct current response</td></tr>
+<tr><td><b>② EpiDepAcc</b></td><td>≥1 Episodic parent</td><td>Correct current response; independent of parent correctness</td></tr>
+<tr><td><b>③ AnsDepAcc</b></td><td>≥1 Answer parent</td><td>Correct current response and all recursive Answer ancestors</td></tr>
+<tr><td><b>Overall</b></td><td>Three complementary metrics</td><td><b>(① + ② + ③) / 3</b></td></tr>
+</tbody>
+</table>
 
 Answer-ancestor traversal follows **Answer edges only**. Episodic edges are excluded
 at every depth. A turn with both dependency types contributes to both subsets.
@@ -125,21 +181,6 @@ Scores are pooled across turns and reported as percentages.
 
 See [Evaluation Protocol](docs/PROTOCOL.md) for frame sampling, response grading,
 and metric definitions.
-
-## Results
-
-Selected results from Table 2. Model results use 128 frames and self-rollout.
-The human baseline has no fixed frame budget. All scores are percentages.
-
-| Model | TurnAcc | EpiDepAcc | AnsDepAcc | Overall |
-|---|---:|---:|---:|---:|
-| Human | 88.1 | 86.0 | 84.2 | 86.1 |
-| Claude Opus 5 | 52.3 | 49.1 | 35.7 | 45.7 |
-| Gemini 3.8 Flash | 50.4 | 46.6 | 30.3 | 42.4 |
-| GPT-5.6-sol | 50.0 | 47.8 | 27.1 | 41.7 |
-| Kimi K3 | 50.5 | 49.0 | 27.1 | 42.2 |
-| Qwen3-VL-235B-A22B | 43.1 | 41.6 | 18.6 | 34.4 |
-| Qwen3.5-27B | 42.2 | 39.8 | 20.9 | 34.3 |
 
 ## Examples and Tests
 
