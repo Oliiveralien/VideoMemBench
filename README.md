@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/project-page-banner.gif" width="100%" alt="VideoMemBench: How Well Do MLLMs Remember in Video Conversations? Animated collage of video frames behind the project title and subtitle." />
+  <img src="assets/project-page-banner.svg" width="960" height="408" alt="VideoMemBench: How Well Do MLLMs Remember in Video Conversations? Animated collage of video frames behind the project title and subtitle." />
 
   <p>Zhengdong Hu<sup>1,*</sup> &nbsp; Chao Wang<sup>1,*</sup> &nbsp; Kaituo Feng<sup>2</sup> &nbsp; Huanjin Yao<sup>3</sup> &nbsp; Mingfei Lu<sup>1</sup> &nbsp; Hehe Fan<sup>4</sup> &nbsp; Yi Yang<sup>4,†</sup></p>
   <p><sup>1</sup> University of Technology Sydney &nbsp; · &nbsp; <sup>2</sup> The Chinese University of Hong Kong<br/>
@@ -8,7 +8,6 @@
 
   <p>
     Paper <sub>Coming soon</sub> &nbsp; · &nbsp;
-    <a href="https://github.com/Oliiveralien/VideoMemBench-Eval"><img src="project-page/assets/icons/github.svg" width="20" height="20" alt="" /> Code</a> &nbsp; · &nbsp;
     <img src="project-page/assets/icons/huggingface.svg" width="20" height="20" alt="" /> Dataset <sub>Coming soon</sub> &nbsp; · &nbsp;
     <a href="#results">Leaderboard</a>
   </p>
