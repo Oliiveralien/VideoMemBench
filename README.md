@@ -1,7 +1,5 @@
 <div align="center">
-  <img src="assets/hero.svg" width="100%" alt="VideoMemBench — what a model has seen, what a model has said" />
-
-  <img src="assets/masthead.svg" width="100%" alt="VideoMemBench: How Well Do MLLMs Remember in Video Conversations? — Zhengdong Hu, Chao Wang, Kaituo Feng, Huanjin Yao, Mingfei Lu, Hehe Fan, Yi Yang" />
+  <img src="assets/project-page-preview.png" width="100%" alt="VideoMemBench: How Well Do MLLMs Remember in Video Conversations? Project page preview with video frames and authors Zhengdong Hu, Chao Wang, Kaituo Feng, Huanjin Yao, Mingfei Lu, Hehe Fan, and Yi Yang." />
 
 
 ![Evaluation only](https://img.shields.io/badge/release-evaluation_only-725AF2?style=for-the-badge)
@@ -9,7 +7,7 @@
 ![128 frames](https://img.shields.io/badge/protocol-128_frames-14B8A6?style=for-the-badge)
 ![Self rollout](https://img.shields.io/badge/history-self_rollout-F59E0B?style=for-the-badge)
 
-[Overview](#overview) · [Evaluation](#evaluation) · [Protocol](docs/PROTOCOL.md) · [Data Format](docs/DATA_FORMAT.md) · [Results](#results) · [Citation](#citation)
+[Overview](#overview) · [Project page](#project-page) · [Evaluation](#evaluation) · [Protocol](docs/PROTOCOL.md) · [Data Format](docs/DATA_FORMAT.md) · [Results](#results) · [Citation](#citation)
 
 </div>
 
@@ -22,62 +20,118 @@ Later questions depend on earlier turns through two types of links: **Episodic
 Dependencies**, which revisit a previously discussed scene or entity, and **Answer
 Dependencies**, which build on an earlier answer.
 
-<p align="center">
-  <img src="assets/statistics.svg" width="100%" alt="326 videos, 2476 turns, 1387 dependent turns, 128 fixed frames" />
-</p>
-
 Each model receives the same **128 timestamped frames**. Questions are presented
 in dialogue order, with the model's own previous responses retained in the history.
 
 ## Results
 
-Main results from Table 2. Models use 128 frames and self-rollout. The human
-baseline has no fixed frame budget. Scores are percentages.
+Main results from Table 2. All 25 models use 128 fixed frames and sequential
+self-rollout. Scores are percentages; higher is better. Rows are ranked by Overall.
 
-<p align="center">
-  <img src="assets/leaderboard.svg" width="100%" alt="Main evaluation results: human baseline, closed-source models, and leading open-weight models" />
-</p>
+| Rank | Model | TurnAcc | EpiDepAcc | AnsDepAcc | Overall ↑ |
+| ---: | :--- | ---: | ---: | ---: | ---: |
+| 1 | Claude Opus 5 | 52.3 | 49.1 | 35.7 | 45.7 |
+| 2 | Gemini 3.8 Flash | 50.4 | 46.6 | 30.3 | 42.4 |
+| 3 | Kimi K3 | 50.5 | 49.0 | 27.1 | 42.2 |
+| 4 | GPT-5.6-sol | 50.0 | 47.8 | 27.1 | 41.7 |
+| 5 | Gemini 3.5 Flash | 49.6 | 45.5 | 29.7 | 41.6 |
 
 <details>
 <summary><b>Full results — 25 models</b></summary>
-<br/>
 
-<table>
-<thead><tr><th align="left">Model</th><th align="center">Frames</th><th align="right">TurnAcc</th><th align="right">EpiDepAcc</th><th align="right">AnsDepAcc</th><th align="right">Overall ↑</th></tr></thead>
-<tbody>
-<tr><th colspan="6" align="left">Human baseline</th></tr>
-<tr><td><img src="assets/icons/human.svg" width="20" height="20" alt="" />&nbsp; Human</td><td align="center">—</td><td align="right"><b>88.1</b></td><td align="right"><b>86.0</b></td><td align="right"><b>84.2</b></td><td align="right"><b>86.1</b></td></tr>
-<tr><th colspan="6" align="left">Closed-source models</th></tr>
-<tr><td><img src="assets/icons/claude-color.svg" width="20" height="20" alt="" />&nbsp; Claude Opus 5</td><td align="center">128</td><td align="right"><b>52.3</b></td><td align="right"><b>49.1</b></td><td align="right"><b>35.7</b></td><td align="right"><b>45.7</b></td></tr>
-<tr><td><img src="assets/icons/gemini-color.svg" width="20" height="20" alt="" />&nbsp; Gemini 3.8 Flash</td><td align="center">128</td><td align="right">50.4</td><td align="right">46.6</td><td align="right">30.3</td><td align="right">42.4</td></tr>
-<tr><td><img src="assets/icons/openai.svg" width="20" height="20" alt="" />&nbsp; GPT-5.6-sol</td><td align="center">128</td><td align="right">50.0</td><td align="right">47.8</td><td align="right">27.1</td><td align="right">41.7</td></tr>
-<tr><td><img src="assets/icons/gemini-color.svg" width="20" height="20" alt="" />&nbsp; Gemini 3.5 Flash</td><td align="center">128</td><td align="right">49.6</td><td align="right">45.5</td><td align="right">29.7</td><td align="right">41.6</td></tr>
-<tr><td><img src="assets/icons/openai.svg" width="20" height="20" alt="" />&nbsp; GPT-5.5</td><td align="center">128</td><td align="right">48.0</td><td align="right">46.5</td><td align="right">27.0</td><td align="right">40.5</td></tr>
-<tr><td><img src="assets/icons/claude-color.svg" width="20" height="20" alt="" />&nbsp; Claude Sonnet 5</td><td align="center">128</td><td align="right">47.8</td><td align="right">45.3</td><td align="right">27.3</td><td align="right">40.2</td></tr>
-<tr><td><img src="assets/icons/gemini-color.svg" width="20" height="20" alt="" />&nbsp; Gemini 3.1 Pro Preview</td><td align="center">128</td><td align="right">45.7</td><td align="right">44.8</td><td align="right">27.0</td><td align="right">39.1</td></tr>
-<tr><td><img src="assets/icons/openai.svg" width="20" height="20" alt="" />&nbsp; GPT-5.4</td><td align="center">128</td><td align="right">44.4</td><td align="right">42.6</td><td align="right">21.9</td><td align="right">36.3</td></tr>
-<tr><th colspan="6" align="left">Open-weight models</th></tr>
-<tr><td><img src="assets/icons/kimi-color.svg" width="20" height="20" alt="" />&nbsp; Kimi K3</td><td align="center">128</td><td align="right"><b>50.5</b></td><td align="right"><b>49.0</b></td><td align="right"><b>27.1</b></td><td align="right"><b>42.2</b></td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-235B-A22B</td><td align="center">128</td><td align="right">43.1</td><td align="right">41.6</td><td align="right">18.6</td><td align="right">34.4</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-27B</td><td align="center">128</td><td align="right">42.2</td><td align="right">39.8</td><td align="right">20.9</td><td align="right">34.3</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-397B-A17B</td><td align="center">128</td><td align="right">42.3</td><td align="right">40.1</td><td align="right">20.3</td><td align="right">34.2</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-122B-A10B</td><td align="center">128</td><td align="right">42.4</td><td align="right">39.5</td><td align="right">19.9</td><td align="right">33.9</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-35B-A3B</td><td align="center">128</td><td align="right">38.2</td><td align="right">36.3</td><td align="right">18.0</td><td align="right">30.8</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-32B</td><td align="center">128</td><td align="right">39.3</td><td align="right">35.9</td><td align="right">17.2</td><td align="right">30.8</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-30B-A3B</td><td align="center">128</td><td align="right">36.4</td><td align="right">35.1</td><td align="right">15.8</td><td align="right">29.1</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-9B</td><td align="center">128</td><td align="right">34.6</td><td align="right">33.4</td><td align="right">12.9</td><td align="right">27.0</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-8B</td><td align="center">128</td><td align="right">34.8</td><td align="right">32.1</td><td align="right">12.3</td><td align="right">26.4</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-4B</td><td align="center">128</td><td align="right">33.8</td><td align="right">32.6</td><td align="right">12.5</td><td align="right">26.3</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3-VL-4B</td><td align="center">128</td><td align="right">32.4</td><td align="right">29.4</td><td align="right">12.9</td><td align="right">24.9</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen2.5-VL-32B</td><td align="center">128</td><td align="right">31.7</td><td align="right">32.6</td><td align="right">9.6</td><td align="right">24.6</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen2.5-VL-7B</td><td align="center">128</td><td align="right">26.2</td><td align="right">24.9</td><td align="right">8.4</td><td align="right">19.8</td></tr>
-<tr><td><img src="assets/icons/keye.svg" width="20" height="20" alt="" />&nbsp; Keye-VL-1.5-8B</td><td align="center">128</td><td align="right">25.4</td><td align="right">24.5</td><td align="right">8.2</td><td align="right">19.4</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen2.5-VL-3B</td><td align="center">128</td><td align="right">23.5</td><td align="right">24.4</td><td align="right">5.7</td><td align="right">17.9</td></tr>
-<tr><td><img src="assets/icons/qwen-color.svg" width="20" height="20" alt="" />&nbsp; Qwen3.5-0.8B</td><td align="center">128</td><td align="right">21.6</td><td align="right">21.3</td><td align="right">5.7</td><td align="right">16.2</td></tr>
-</tbody>
-</table>
+| Rank | Model | TurnAcc | EpiDepAcc | AnsDepAcc | Overall ↑ |
+| ---: | :--- | ---: | ---: | ---: | ---: |
+| 1 | Claude Opus 5 | 52.3 | 49.1 | 35.7 | 45.7 |
+| 2 | Gemini 3.8 Flash | 50.4 | 46.6 | 30.3 | 42.4 |
+| 3 | Kimi K3 | 50.5 | 49.0 | 27.1 | 42.2 |
+| 4 | GPT-5.6-sol | 50.0 | 47.8 | 27.1 | 41.7 |
+| 5 | Gemini 3.5 Flash | 49.6 | 45.5 | 29.7 | 41.6 |
+| 6 | GPT-5.5 | 48.0 | 46.5 | 27.0 | 40.5 |
+| 7 | Claude Sonnet 5 | 47.8 | 45.3 | 27.3 | 40.2 |
+| 8 | Gemini 3.1 Pro Preview | 45.7 | 44.8 | 27.0 | 39.1 |
+| 9 | GPT-5.4 | 44.4 | 42.6 | 21.9 | 36.3 |
+| 10 | Qwen3-VL-235B-A22B | 43.1 | 41.6 | 18.6 | 34.4 |
+| 11 | Qwen3.5-27B | 42.2 | 39.8 | 20.9 | 34.3 |
+| 12 | Qwen3.5-397B-A17B | 42.3 | 40.1 | 20.3 | 34.2 |
+| 13 | Qwen3.5-122B-A10B | 42.4 | 39.5 | 19.9 | 33.9 |
+| 14 | Qwen3.5-35B-A3B | 38.2 | 36.3 | 18.0 | 30.8 |
+| 15 | Qwen3-VL-32B | 39.3 | 35.9 | 17.2 | 30.8 |
+| 16 | Qwen3-VL-30B-A3B | 36.4 | 35.1 | 15.8 | 29.1 |
+| 17 | Qwen3.5-9B | 34.6 | 33.4 | 12.9 | 27.0 |
+| 18 | Qwen3-VL-8B | 34.8 | 32.1 | 12.3 | 26.4 |
+| 19 | Qwen3.5-4B | 33.8 | 32.6 | 12.5 | 26.3 |
+| 20 | Qwen3-VL-4B | 32.4 | 29.4 | 12.9 | 24.9 |
+| 21 | Qwen2.5-VL-32B | 31.7 | 32.6 | 9.6 | 24.6 |
+| 22 | Qwen2.5-VL-7B | 26.2 | 24.9 | 8.4 | 19.8 |
+| 23 | Keye-VL-1.5-8B | 25.4 | 24.5 | 8.2 | 19.4 |
+| 24 | Qwen2.5-VL-3B | 23.5 | 24.4 | 5.7 | 17.9 |
+| 25 | Qwen3.5-0.8B | 21.6 | 21.3 | 5.7 | 16.2 |
 
 </details>
+
+### Frame-count comparison
+
+Table 4 evaluates 13 open-weight models with 64 or 32 uniformly sampled frames per
+video, using the same self-rollout protocol and scoring rules as the 128-frame
+results. Scores are percentages; higher is better.
+
+<details>
+<summary><b>64 frames — 13 models</b></summary>
+
+| Rank | Model | TurnAcc | EpiDepAcc | AnsDepAcc | Overall ↑ |
+| ---: | :--- | ---: | ---: | ---: | ---: |
+| 1 | Qwen3-VL-235B-A22B | 40.3 | 39.3 | 15.6 | 31.7 |
+| 2 | Qwen3.5-122B-A10B | 37.8 | 36.5 | 15.2 | 29.8 |
+| 3 | Qwen3.5-27B | 37.9 | 36.7 | 14.8 | 29.8 |
+| 4 | Qwen3-VL-32B | 37.8 | 36.1 | 14.5 | 29.5 |
+| 5 | Qwen3.5-35B-A3B | 37.0 | 36.7 | 13.5 | 29.1 |
+| 6 | Qwen3-VL-30B-A3B | 33.6 | 32.9 | 11.5 | 26.0 |
+| 7 | Qwen3-VL-8B | 32.7 | 32.0 | 11.9 | 25.5 |
+| 8 | Qwen3.5-9B | 33.4 | 33.2 | 9.6 | 25.4 |
+| 9 | Qwen3-VL-4B | 31.3 | 30.3 | 12.1 | 24.5 |
+| 10 | Keye-VL-1.5-8B | 24.5 | 24.9 | 6.3 | 18.5 |
+| 11 | Qwen2.5-VL-7B | 24.1 | 22.7 | 6.4 | 17.7 |
+| 12 | Qwen2.5-VL-3B | 22.5 | 22.5 | 5.1 | 16.7 |
+| 13 | Qwen3.5-0.8B | 21.0 | 21.1 | 4.7 | 15.6 |
+
+</details>
+
+<details>
+<summary><b>32 frames — 13 models</b></summary>
+
+| Rank | Model | TurnAcc | EpiDepAcc | AnsDepAcc | Overall ↑ |
+| ---: | :--- | ---: | ---: | ---: | ---: |
+| 1 | Qwen3-VL-235B-A22B | 36.3 | 37.8 | 14.5 | 29.5 |
+| 2 | Qwen3.5-122B-A10B | 35.0 | 35.2 | 10.7 | 27.0 |
+| 3 | Qwen3.5-35B-A3B | 34.5 | 34.1 | 12.3 | 27.0 |
+| 4 | Qwen3.5-27B | 34.9 | 34.2 | 11.7 | 26.9 |
+| 5 | Qwen3-VL-32B | 34.1 | 32.6 | 13.1 | 26.6 |
+| 6 | Qwen3-VL-30B-A3B | 32.1 | 32.5 | 8.0 | 24.2 |
+| 7 | Qwen3.5-9B | 29.8 | 30.4 | 8.6 | 22.9 |
+| 8 | Qwen3-VL-8B | 29.4 | 29.4 | 9.2 | 22.7 |
+| 9 | Qwen3-VL-4B | 29.0 | 29.0 | 8.8 | 22.3 |
+| 10 | Qwen2.5-VL-7B | 23.2 | 23.7 | 4.9 | 17.3 |
+| 11 | Keye-VL-1.5-8B | 23.3 | 23.1 | 5.1 | 17.2 |
+| 12 | Qwen2.5-VL-3B | 22.6 | 23.4 | 4.7 | 16.9 |
+| 13 | Qwen3.5-0.8B | 20.1 | 21.8 | 4.7 | 15.5 |
+
+</details>
+
+We will continue evaluating new models and updating this leaderboard. The tables
+above match the project page's [128-frame results](project-page/assets/results.json)
+and [64/32-frame results](project-page/assets/frame-results.json).
+
+## Project page
+
+The website source is in [`project-page/`](project-page/). It includes animated
+memory illustrations, searchable and sortable result tables, and four interactive
+video cases: basketball, football, Google, and Apple. The image at the top of this
+README is a preview of that page.
+
+This repository is currently private, and GitHub Pages is not enabled. A repository
+administrator must enable Pages with GitHub Actions as its source before running
+the deployment workflow. See [Project page setup](docs/PROJECT_PAGE.md) for local
+preview and deployment instructions.
 
 ## Evaluation
 
