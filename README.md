@@ -6,11 +6,14 @@
   <sup>3</sup> The Hong Kong University of Science and Technology &nbsp; · &nbsp; <sup>4</sup> Zhejiang University</p>
   <p><sup>*</sup> Equal contribution &nbsp; · &nbsp; <sup>†</sup> Corresponding author</p>
 
+
   <p>
+    <a href="https://oliiveralien.github.io/VideoMemBench-Project/">Project</a> &nbsp; · &nbsp;
     Paper <sub>Coming soon</sub> &nbsp; · &nbsp;
     <img src="assets/icons/huggingface.svg" width="20" height="20" alt="" /> Dataset <sub>Coming soon</sub> &nbsp; · &nbsp;
     <a href="#results">Leaderboard</a>
   </p>
+
 
 [Overview](#overview) · [Evaluation](#evaluation) · [Protocol](docs/PROTOCOL.md) · [Data Format](docs/DATA_FORMAT.md) · [Results](#results) · [Citation](#citation)
 
