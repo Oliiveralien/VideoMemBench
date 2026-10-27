@@ -17,6 +17,7 @@
     &nbsp; · &nbsp;
     <a href="https://huggingface.co/datasets/VideoMemBench/data">
     <img src="assets/icons/huggingface.svg" width="20" height="20" alt="" /> Dataset
+    </a>
     &nbsp; · &nbsp;
     <a href="#results">
       <img src="assets/icons/leaderboard.svg" width="20" height="20" alt="" /> Leaderboard
