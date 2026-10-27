@@ -9,13 +9,14 @@
 
   
   <p>
-    <a href="https://oliiveralien.github.io/VideoMemBench-Project/">
+    <a href="https://oliiveralien.github.io/VideoMemBench-Project">
       <img src="assets/icons/project.svg" width="20" height="20" alt="" /> Project
     </a>
     &nbsp; · &nbsp;
     <img src="assets/icons/arxiv.svg" width="20" height="20" alt="" /> Paper <sub>Coming soon</sub>
     &nbsp; · &nbsp;
-    <img src="assets/icons/huggingface.svg" width="20" height="20" alt="" /> Dataset <sub>Coming soon</sub>
+    <a href="https://huggingface.co/datasets/VideoMemBench/data">
+    <img src="assets/icons/huggingface.svg" width="20" height="20" alt="" /> Dataset
     &nbsp; · &nbsp;
     <a href="#results">
       <img src="assets/icons/leaderboard.svg" width="20" height="20" alt="" /> Leaderboard
