@@ -7,12 +7,21 @@
   <p><sup>*</sup> Equal contribution &nbsp; · &nbsp; <sup>†</sup> Corresponding author</p>
 
 
+  
   <p>
-    <a href="https://oliiveralien.github.io/VideoMemBench-Project/">Project</a> &nbsp; · &nbsp;
-    Paper <sub>Coming soon</sub> &nbsp; · &nbsp;
-    <img src="assets/icons/huggingface.svg" width="20" height="20" alt="" /> Dataset <sub>Coming soon</sub> &nbsp; · &nbsp;
-    <a href="#results">Leaderboard</a>
+    <a href="https://oliiveralien.github.io/VideoMemBench-Project/">
+      <img src="assets/icons/project.svg" width="20" height="20" alt="" /> Project
+    </a>
+    &nbsp; · &nbsp;
+    <img src="assets/icons/arxiv.svg" width="20" height="20" alt="" /> Paper <sub>Coming soon</sub>
+    &nbsp; · &nbsp;
+    <img src="assets/icons/huggingface.svg" width="20" height="20" alt="" /> Dataset <sub>Coming soon</sub>
+    &nbsp; · &nbsp;
+    <a href="#results">
+      <img src="assets/icons/leaderboard.svg" width="20" height="20" alt="" /> Leaderboard
+    </a>
   </p>
+
 
 
 [Overview](#overview) · [Evaluation](#evaluation) · [Protocol](docs/PROTOCOL.md) · [Data Format](docs/DATA_FORMAT.md) · [Results](#results) · [Citation](#citation)
