@@ -95,9 +95,9 @@ self-rollout. Scores are percentages; higher is better. Rows are ranked by Overa
 
 ### Frame-count comparison
 
-Table 4 evaluates 13 open-weight models with 64 or 32 uniformly sampled frames per
+Evaluations on 13 open-weight models with 64 or 32 uniformly sampled frames per
 video, using the same self-rollout protocol and scoring rules as the 128-frame
-results. Scores are percentages; higher is better.
+results.
 
 <details>
 <summary><b>64 frames — 13 models</b></summary>
