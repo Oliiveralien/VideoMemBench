@@ -49,7 +49,7 @@ in dialogue order, with the model's own previous responses retained in the histo
 
 ## Results
 
-Main results from Table 2. All 25 models use 128 fixed frames and sequential
+Main results across current LLMs. All 25 models use 128 fixed frames and sequential
 self-rollout. Scores are percentages; higher is better. Rows are ranked by Overall.
 
 | Rank | Model | TurnAcc | EpiDepAcc | AnsDepAcc | Overall ↑ |
