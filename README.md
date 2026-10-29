@@ -9,7 +9,7 @@
 
   
   <p>
-    <a href="https://oliiveralien.github.io/VideoMemBench-Project">
+    <a href="https://videomembench.github.io/">
       <img src="assets/icons/project.svg" width="20" height="20" alt="" /> Project
     </a>
     &nbsp; · &nbsp;
