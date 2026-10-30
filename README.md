@@ -259,11 +259,13 @@ and Overall **58.33**.
 ## Citation
 
 ```bibtex
-@unpublished{videomembench,
-  title  = {VideoMemBench: How Well Do MLLMs Remember in Video Conversations?},
-  author = {Hu, Zhengdong and Wang, Chao and Feng, Kaituo and Yao, Huanjin
-            and Lu, Mingfei and Fan, Hehe and Yang, Yi},
-  note   = {Manuscript}
+@misc{videomembench,
+      title={VideoMemBench: How Well Do MLLMs Remember in Video Conversations?}, 
+      author={Zhengdong Hu and Chao Wang and Kaituo Feng and Huanjin Yao and Mingfei Lu and Hehe Fan and Yi Yang},
+      year={2026},
+      eprint={2610.40131},
+      archivePrefix={arXiv},
+      url={https://arxiv.org/abs/2610.40131}, 
 }
 ```
 
