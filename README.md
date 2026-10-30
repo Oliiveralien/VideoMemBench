@@ -265,7 +265,7 @@ and Overall **58.33**.
       year={2026},
       eprint={2610.40131},
       archivePrefix={arXiv},
-      url={https://arxiv.org/abs/2610.40131}, 
+      url={https://arxiv.org/abs/2610.40131}
 }
 ```
 
