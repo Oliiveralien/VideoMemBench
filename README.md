@@ -221,22 +221,6 @@ Reports are available in Markdown, JSON, and CSV. Incomplete runs are rejected b
 default. `--allow-incomplete` reports diagnostic scores with missing turns counted
 as incorrect.
 
-## Metrics
-
-<table>
-<thead><tr><th align="left">Metric</th><th align="left">Evaluation subset</th><th align="left">Credit rule</th></tr></thead>
-<tbody>
-<tr><td><b>①&nbsp;TurnAcc</b></td><td>All turns</td><td>Correct current response</td></tr>
-<tr><td><b>②&nbsp;EpiDepAcc</b></td><td>≥1 Episodic parent</td><td>Correct current response; independent of parent correctness</td></tr>
-<tr><td><b>③&nbsp;AnsDepAcc</b></td><td>≥1 Answer parent</td><td>Correct current response and all recursive Answer ancestors</td></tr>
-<tr><td><b>Overall</b></td><td>Three complementary metrics</td><td><b>(① + ② + ③) / 3</b></td></tr>
-</tbody>
-</table>
-
-Answer-ancestor traversal follows **Answer edges only**. Episodic edges are excluded
-at every depth. A turn with both dependency types contributes to both subsets.
-Scores are pooled across turns and reported as percentages.
-
 See [Evaluation Protocol](docs/PROTOCOL.md) for frame sampling, response grading,
 and metric definitions.
 
