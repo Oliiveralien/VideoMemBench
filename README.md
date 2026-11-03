@@ -46,7 +46,7 @@ Later questions depend on earlier turns through two types of links: **Episodic
 Dependencies**, which revisit a previously discussed scene or entity, and **Answer
 Dependencies**, which build on an earlier answer.
 
-Each model receives the same **128 timestamped frames**. Questions are presented
+Questions are presented
 in dialogue order, with the model's own previous responses retained in the history.
 
 ## Results
