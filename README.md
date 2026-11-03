@@ -196,12 +196,6 @@ export VMB_JUDGE_API_KEY="your-judge-api-key"
 python -m inference.evaluate --config configs/evaluation.toml
 ```
 
-For unauthenticated local endpoints, leave the corresponding key variable unset.
-The vision endpoint must support 128 images and the complete dialogue history.
-Use `--workers N` to evaluate videos concurrently; turns within each video remain
-sequential. Repeating a run skips completed videos and retries failed dialogues.
-Use a new output path when changing the model or evaluation settings.
-
 ### Compute scores
 
 ```bash
