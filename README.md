@@ -147,10 +147,6 @@ We will continue evaluating new models and updating this leaderboard.
 
 ## Evaluation
 
-<p align="center">
-  <img src="assets/evaluation-flow.svg" width="100%" alt="Fixed frames, self-rollout, grading, and metrics" />
-</p>
-
 ### Installation
 
 Python 3.11 or newer is required.
@@ -223,22 +219,6 @@ as incorrect.
 
 See [Evaluation Protocol](docs/PROTOCOL.md) for frame sampling, response grading,
 and metric definitions.
-
-## Examples and Tests
-
-The [example files](examples/) illustrate the annotation format and dependency
-scoring. They are synthetic examples, not benchmark samples.
-
-```bash
-pip install -e ".[dev]"
-python -m videomembench.data examples/annotations.jsonl
-python -m inference.metrics \
-  --annotations examples/annotations.jsonl examples/results.jsonl
-python -m pytest
-```
-
-The example scores are TurnAcc **75.00**, EpiDepAcc **100.00**, AnsDepAcc **0.00**,
-and Overall **58.33**.
 
 ## Citation
 
